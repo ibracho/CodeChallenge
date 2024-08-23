@@ -4,6 +4,7 @@ import { HelloWave } from "@/components/HelloWave";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
+import { Collapsible } from "@/components/Collapsible";
 
 export default function HomeScreen() {
   return (
@@ -17,7 +18,7 @@ export default function HomeScreen() {
       }
     >
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">League of Legends eSports!</ThemedText>
+        <ThemedText type="title">League of Legends eSports News!</ThemedText>
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
@@ -38,7 +39,31 @@ export default function HomeScreen() {
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">LoL Esports!</ThemedText>
-        <ThemedText>Stay tunned for more upcoming dates!</ThemedText>
+        <Collapsible title="Learn about the exciting updates coming to LoL Esports in 2025">
+          <ThemedText style={styles.para}>
+            In the spirit of evolving LoL Esports towards a brighter future,
+            we’re unveiling a series of enhancements for 2025 that we believe
+            will make our sport more exciting and competitive for fans and pros:
+          </ThemedText>
+          <ThemedText>{" \u25CF New, third international event"}</ThemedText>
+          <ThemedText>
+            {" \u25CF Innovative “Fearless Draft” game mode in Tier-1 play"}
+          </ThemedText>
+          <ThemedText>
+            {" \u25CF Unified split schedule for all leagues"}
+          </ThemedText>
+          <ThemedText>
+            {
+              " \u25CF Proposed multi-region leagues in Asia-Pacific(APAC) and Americas"
+            }
+          </ThemedText>
+          <ThemedText>
+            {" \u25CF Experiment with “Guest Team” slots/promotion-relegation"}
+          </ThemedText>
+          <ThemedText>
+            {" \u25CF New international event league slots."}
+          </ThemedText>
+        </Collapsible>
       </ThemedView>
     </ParallaxScrollView>
   );
@@ -60,5 +85,9 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     position: "absolute",
+  },
+  para: {
+    fontStyle: "italic",
+    marginBottom: 8,
   },
 });

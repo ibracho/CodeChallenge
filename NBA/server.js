@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const team = require("./schema.js");
 
 mongoose.connect(process.env.Connection_String);
@@ -14,6 +15,7 @@ database.once("connected", () => {
 });
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 app.get("/teams", async (req, res) => {
@@ -25,4 +27,6 @@ app.get("/teams", async (req, res) => {
   }
 });
 
-app.listen(3000);
+app.listen(3005, () => {
+  console.log("Server is running on http://localhost:3005");
+});

@@ -10,7 +10,10 @@ const group = new mongoose.Schema({
   loses: {
     type: String,
   },
+  imagePath: {
+    type: String,
+  },
 });
 
-const team = mongoose.model("teams", group);
+const team = mongoose.model("Teams", group);
 module.exports = team;
